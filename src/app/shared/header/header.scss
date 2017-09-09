@@ -1,0 +1,22 @@
+@import "../../styles/variables/colors.scss";
+
+.main-navbar {
+	height: 60px;
+	background-color: $c-cornflower-blue;
+	color: $white;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.logo-title {
+	line-height: 1;
+	font-size: 1.6rem;
+}
+
+.logo-sub-title {
+	font-size: 0.7rem;
+}
+

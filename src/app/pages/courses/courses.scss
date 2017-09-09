@@ -1,0 +1,54 @@
+@import "../../styles/variables/colors.scss";
+
+.courses {
+}
+
+.course-item {
+    border: 1px solid $c-gainsboro;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+
+    &__info {
+        width: 100%;
+    }
+
+    &__actions {
+        margin-left: auto;
+    }
+}
+
+.course-item-header {
+    display: flex;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    &__date {
+        margin-left: auto;
+    }
+}
+
+.courses {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &__panel {
+        display: flex;
+    }
+
+    &__add-course {
+        margin-left: auto;
+    }
+}
+
+.course-search {
+    &__input {
+        margin-right: 15px;
+    }
+}
+
+.course-item-description {
+    text-align: justify;
+    padding-right: 15px;
+}
