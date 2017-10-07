@@ -55,9 +55,9 @@ export class CoursesService {
         return this.http.put(`api/course-list/${courseToEdit.id}`, courseToEdit);
     }
 
-    getCourseById(id: string): Observable<CourseItem> {
+    getCourseById(id: number): Observable<CourseItem> {
         // return {...this.courseList.find((course: CourseItem) => course.id === id)};
-        return this.http.get(`api/course-list/${id}`).map((res: Response) => res.json());
+        return this.http.get(`api/course-list/${id}`).map((res: Response) => res.json().data);
     }
 
     private saveToStorage(courseList: CourseItem[]): void {

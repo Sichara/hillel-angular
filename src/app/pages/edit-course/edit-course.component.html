@@ -1,0 +1,15 @@
+EDIT COURSE
+
+<!--{{courseItem$ | async as courseItem}}-->
+
+<div>
+    <div>
+        {{(courseItem$ | async)?.name}}
+    </div>
+    <div>
+        {{(courseItem$ | async)?.duration}}
+    </div>
+</div>
+
+
+<cr-course-form [course]="courseItem$ | async"></cr-course-form>

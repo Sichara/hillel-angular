@@ -18,7 +18,7 @@ import {
  * Platform and Environment providers/directives/pipes
  */
 import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routes';
+import { routes } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
 // import { NoContentComponent } from './shared';
@@ -36,6 +36,7 @@ import {
 import { SharedModule } from './shared/shared.module';
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryCoursesService } from './in-memory-db';
+import { EditCourseModule } from './pages/edit-course/edit-course.module';
 
 // Services
 
@@ -58,13 +59,14 @@ import { InMemoryCoursesService } from './in-memory-db';
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
+        routes,
         HomeModule,
         CoursesModule,
         AddCourseModule,
         LoginModule,
         SharedModule,
-        InMemoryWebApiModule.forRoot(InMemoryCoursesService)
+        InMemoryWebApiModule.forRoot(InMemoryCoursesService),
+        EditCourseModule
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS

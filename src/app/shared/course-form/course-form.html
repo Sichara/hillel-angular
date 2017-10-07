@@ -11,7 +11,7 @@
           placeholder="Name Course"
           name="name"
           required
-          [ngModel]="course.name"
+          [ngModel]="course?.name"
           #courseName="ngModel"
       >
       <div class="alert alert-danger"
@@ -34,9 +34,9 @@
           rows="6"
           required
           minlength="3"
-          maxlength="10"
+          maxlength="100"
           name="description"
-          [ngModel]="course.description"
+          [ngModel]="course?.description"
           #courseDescription="ngModel"
       ></textarea>
       <div class="alert alert-danger"
@@ -55,7 +55,7 @@
              type="text"
              class="input-group col-sm-3"
              name="duration"
-             [ngModel]="course.duration"
+             [ngModel]="course?.duration"
              #courseDuration="ngModel">
       <div class="alert alert-danger"
            *ngIf="courseDuration.touched && courseDuration?.errors?.invalidOnlyNumbers">only numbers</div>
