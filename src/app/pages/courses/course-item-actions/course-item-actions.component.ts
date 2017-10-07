@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'cr-course-item-actions',
@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class CourseItemActionsComponent {
+    @Output() deleteCourse: EventEmitter<any> = new EventEmitter();
   constructor() {
   }
 
@@ -16,7 +17,7 @@ export class CourseItemActionsComponent {
     console.log('edit course');
   }
 
-  deleteCourse() {
-    console.log('delete course');
+  onDeleteCourse() {
+    this.deleteCourse.emit();
   }
 }

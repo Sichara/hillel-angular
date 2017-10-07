@@ -24,10 +24,16 @@ import { AppState } from './app.service';
 })
 export class AppComponent implements OnInit {
 
+    appLogoTitle: string = 'Logo 2';
+
 	constructor() {
 	}
 
 	public ngOnInit() {
 	}
+
+    onLogoClick(headerString: string): void {
+	    console.log('APP COMPONENT', headerString);
+    }
 
 }

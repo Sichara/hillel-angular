@@ -1,4 +1,6 @@
-<cr-header></cr-header>
+<cr-header [title]="appLogoTitle"
+           (logoClick)="onLogoClick($event)"
+></cr-header>
 
 <main class="container">
   <router-outlet></router-outlet>

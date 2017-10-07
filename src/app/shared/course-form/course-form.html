@@ -1,0 +1,74 @@
+<form #formGroup="ngForm" (ngSubmit)="submit(formGroup)">
+  <div class="form-group row">
+    <label for="name-course" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input
+          type="text"
+          class="form-control"
+          [class.has-error]="courseName.touched && courseName.invalid"
+          id="name-course"
+          aria-describedby="nameCourse"
+          placeholder="Name Course"
+          name="name"
+          required
+          [ngModel]="course.name"
+          #courseName="ngModel"
+      >
+      <div class="alert alert-danger"
+           *ngIf="courseName.touched && courseName.invalid && courseName?.errors.minlength">min length 2</div>
+      <div class="alert alert-danger"
+           *ngIf="courseName.touched && courseName.invalid && courseName?.errors.maxlength">max length 50</div>
+      <div class="alert alert-danger"
+           *ngIf="courseName.touched && courseName.invalid && courseName?.errors.required">required</div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description-course" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <textarea
+          id="description-course"
+          class="form-control"
+          [class.has-error]="courseDescription.touched && courseDescription.invalid"
+          placeholder="Description course"
+          rows="6"
+          required
+          minlength="3"
+          maxlength="10"
+          name="description"
+          [ngModel]="course.description"
+          #courseDescription="ngModel"
+      ></textarea>
+      <div class="alert alert-danger"
+           *ngIf="courseDescription.touched && courseDescription.invalid && courseDescription?.errors.minlength">min length 2</div>
+      <div class="alert alert-danger"
+           *ngIf="courseDescription.touched && courseDescription.invalid && courseDescription?.errors.maxlength">max length 500</div>
+      <div class="alert alert-danger"
+           *ngIf="courseDescription.touched && courseDescription.invalid && courseDescription?.errors.required">required</div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="duration-course" class="col-sm-2 col-form-label">Duration</label>
+    <div class="col-sm-10">
+      <input id="duration-course"
+             type="text"
+             class="input-group col-sm-3"
+             name="duration"
+             [ngModel]="course.duration"
+             #courseDuration="ngModel">
+      <div class="alert alert-danger"
+           *ngIf="courseDuration.touched && courseDuration?.errors?.invalidOnlyNumbers">only numbers</div>
+    </div>
+  </div>
+
+  <cr-button type="submit"
+             className="btn-success"
+             [disabled]="formGroup.invalid"
+  >Save</cr-button>
+
+  <cr-button
+      type="button"
+      className="btn-secondary"
+      routerLink="/courses">Cancel</cr-button>
+</form>

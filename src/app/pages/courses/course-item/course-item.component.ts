@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { Component, ViewEncapsulation, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { CourseItem } from '../course-item.model';
 
 @Component({
@@ -9,9 +9,19 @@ import { CourseItem } from '../course-item.model';
   encapsulation: ViewEncapsulation.None
 })
 
-export class CourseItemComponent {
+export class CourseItemComponent implements OnDestroy {
   @Input() public course: CourseItem;
+
+  @Output() deleteCourse: EventEmitter<null> = new EventEmitter();
 
   constructor() {
   }
+
+    onDeleteCourse(): void {
+      this.deleteCourse.emit();
+    }
+
+    ngOnDestroy(): void {
+      console.log(this.course, 'On Destroy!!!!!!!');
+    }
 }

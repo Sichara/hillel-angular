@@ -2,14 +2,14 @@
 import { CrButtonComponent } from './button.component';
 
 @NgModule({
-	declarations: [
-    CrButtonComponent
-  ],
-	imports: [],
-	exports: [CrButtonComponent]
+    declarations: [
+        CrButtonComponent
+    ],
+    imports: [],
+    exports: [CrButtonComponent]
 })
 
 export class CrButtonModule {
-	constructor() {
-	}
+    constructor() {
+    }
 }

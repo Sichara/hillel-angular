@@ -14,23 +14,27 @@ import { CoursesComponent } from './courses.component';
 import { CourseSearchModule } from './course-search';
 import { CourseAddModule } from './course-add';
 import { CourseListModule } from './course-list';
+import { HttpModule } from '@angular/http';
+import { CoursesService } from './courses.service';
 
 @NgModule({
-  declarations: [
-    CoursesComponent
-  ],
-  imports: [
-    RouterModule.forChild(coursesRoutes),
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-    CourseSearchModule,
-    CourseAddModule,
-    CourseListModule
-  ],
-  providers: []
+    declarations: [
+        CoursesComponent
+    ],
+    imports: [
+        RouterModule.forChild(coursesRoutes),
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        CourseSearchModule,
+        CourseAddModule,
+        CourseListModule,
+        HttpModule,
+    ],
+    providers: [CoursesService]
 })
 
 export class CoursesModule {
-  constructor() {}
+    constructor() {
+    }
 }

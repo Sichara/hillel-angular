@@ -3,6 +3,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CourseListComponent } from './course-list.component';
 import { CourseItemModule } from '../course-item';
+import { SortPipe } from './sort.pipe';
+import { TransformPipe } from './transform.pipe';
 
 @NgModule({
   imports: [
@@ -15,9 +17,14 @@ import { CourseItemModule } from '../course-item';
     CourseListComponent
   ],
   declarations: [
-    CourseListComponent
+    CourseListComponent,
+      SortPipe,
+      TransformPipe
   ],
-  providers: [],
+  providers: [
+      SortPipe,
+      TransformPipe
+  ],
 })
 
 export class CourseListModule {

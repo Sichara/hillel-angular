@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'cr-course-item-header',
@@ -12,6 +13,8 @@ export class CourseItemHeaderComponent {
   @Input() public courseName: string;
   @Input() public courseDuration: number;
   @Input() public courseDate: Date;
+
+  test: Observable<string>;
 
   constructor() {
   }

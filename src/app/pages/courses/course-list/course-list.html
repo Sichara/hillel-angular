@@ -1,3 +1,8 @@
 <div class="course-list">
-  <cr-course-item *ngFor="let course of courseList" [course]="course"></cr-course-item>
+    <div *ngFor="let course of courseList | sort: 'duration'; let i = index">
+          <cr-course-item #courseItemHtml
+                          [course]="course"
+                          (deleteCourse)="onDeleteCourse(course.id)">
+        </cr-course-item>
+    </div>
 </div>

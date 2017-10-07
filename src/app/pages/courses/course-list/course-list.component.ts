@@ -1,5 +1,9 @@
-import { Component, ViewEncapsulation, Input } from '@angular/core';
+import {
+    Component, ViewEncapsulation, Input, EventEmitter, Output, OnInit, ViewChild, AfterViewInit, ViewChildren,
+    QueryList, AfterContentInit, OnChanges, SimpleChanges
+} from '@angular/core';
 import { CourseItem } from '../course-item.model';
+import { CourseItemComponent } from '../course-item/course-item.component';
 
 @Component({
   selector: 'cr-course-list',
@@ -9,8 +13,24 @@ import { CourseItem } from '../course-item.model';
   encapsulation: ViewEncapsulation.None
 })
 
-export class CourseListComponent {
-  @Input() public courseList: CourseItem;
+export class CourseListComponent implements AfterViewInit, OnChanges {
+  @Input() public courseList: CourseItem[];
+  @Input() filterString: string = '';
 
-  constructor() {}
+  @Output() deleteCourse: EventEmitter<number> = new EventEmitter();
+
+  @ViewChildren(CourseItemComponent) courseItemComponent: QueryList<CourseItemComponent>;
+
+  constructor() {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+
+  ngAfterViewInit(): void {
+  }
+
+    onDeleteCourse(index: number): void {
+        this.deleteCourse.emit(index);
+    }
 }

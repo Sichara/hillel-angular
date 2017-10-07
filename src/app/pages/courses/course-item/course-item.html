@@ -1,13 +1,16 @@
-<div class="course-item">
+<div class="course-item" [cr-background]="'#ccc'">
   <div class="course-item__info">
     <cr-course-item-header
-      [courseName]="course.name"
-      [courseDuration]="course.duration"
-      [courseDate]="course.date"
+      [courseName]="course?.name"
+      [courseDuration]="course?.duration"
+      [courseDate]="course?.date"
     ></cr-course-item-header>
 
-    <cr-course-item-description [courseDescription]="course.description"></cr-course-item-description>
+    <cr-course-item-description [courseDescription]="course?.description"></cr-course-item-description>
   </div>
 
-  <cr-course-item-actions></cr-course-item-actions>
+    <div>
+        {{course | json}}
+    </div>
+  <cr-course-item-actions (deleteCourse)="onDeleteCourse()"></cr-course-item-actions>
 </div>

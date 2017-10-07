@@ -1,5 +1,8 @@
 <div class="course-search">
-  <input type="text" placeholder="name fragment or date" class="" />
+  <input type="text" placeholder="name fragment or date"
+         [(ngModel)]="searchString"
+         (ngModelChange)="onSearch($event)"
+         class="" />
 
-  <cr-button (onClick)="search()">Find</cr-button>
+  <!--<cr-button (onClick)="onSearch(searchString)">Find</cr-button>-->
 </div>

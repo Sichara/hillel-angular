@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'cr-course-add',
@@ -9,10 +9,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class CourseAddComponent {
+    @Output() addCourse: EventEmitter<null> = new EventEmitter();
   constructor() {
   }
 
-  public addCourse() {
+  public clickHandler() {
     console.log('add course');
+
+    this.addCourse.emit();
   }
 }

@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CourseItemHeaderComponent } from './course-item-header.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [],
+  imports: [
+      CommonModule
+  ],
   exports: [
     CourseItemHeaderComponent
   ],

@@ -1,5 +1,22 @@
 <div class="course-item-header">
-  <div class="course-item__name">{{courseName}}</div>
-  <div class="course-item__duration">{{courseDuration}}</div>
-  <div class="course-item__date">{{courseDate}}</div>
+  <div class="course-item course-item__name">{{courseName}}</div>
+  <div class="course-item course-item__duration" *ngIf="!!courseDuration">
+      {{courseDuration}}
+  </div>
+
+  <div class="course-item course-item__date">
+      {{courseDate | date: 'short'}}
+      </div>
+
+    <div [ngSwitch]="courseDuration">
+        <template [ngSwitchCase]="1000">
+            awesome
+        </template>
+        <template [ngSwitchCase]="3000">
+            not Bad
+        </template>
+        <template ngSwitchDefault>
+            {{courseDuration}}
+        </template>
+    </div>
 </div>

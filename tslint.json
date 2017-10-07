@@ -18,7 +18,8 @@
 			false,
 			"always-prefix"
 		],
-		// Angular 2
+        "no-trailing-whitespace": false,
+        // Angular 2
 		"component-class-suffix": false,
 		"directive-class-suffix": false,
 //    "directive-selector": [true, "attribute", [], "camelCase"],
@@ -30,12 +31,11 @@
 		"no-access-missing-member": true,
 		"no-attribute-parameter-decorator": true,
 		"no-forward-ref": true,
-		"no-input-rename": true,
+		"no-input-rename": false,
 		"no-output-rename": true,
 		"pipe-naming": [
 			true,
-			"camelCase",
-			"my"
+			"camelCase"
 		],
 		"templates-use-public": true,
 		"use-host-property-decorator": true,
